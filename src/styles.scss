@@ -1,0 +1,53 @@
+@import './constants.scss';
+
+*, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(230, 230, 230);
+  font-size: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.index {
+  margin: 0 auto;
+  max-width: $appContainerWidth;
+}
+
+.navigation {
+  margin: 40px 0;
+  ul {
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+  }
+
+  li {
+    flex: 1;
+    text-align: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid gray;
+    margin: 0 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    color: rgb(100,100,100);
+    text-decoration: none;
+    display: block;
+    padding: 20px 0;
+
+    &:hover {
+      background-color: rgb(200,200,200);
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@import '../../constants.scss';
+
+.leaf__left {
+  .leaf__shape:hover {
+    fill: $redColor;
+  }
+  .leaf__inner-text {
+    fill: $redColor;
+  }
+}
+
+.leaf__right {
+  .leaf__shape:hover {
+    fill: $greenColor;
+  }
+  .leaf__inner-text {
+    fill: $greenColor;
+  }
+}
+
+.leaf__shape {
+  cursor: pointer;
+  stroke-width: 1;
+  fill: #ffffff;
+  stroke: rgb(215,215,215);
+  stroke-linejoin: miter;
+  stroke-linecap: square;
+  stroke-miterlimit: 3;
+
+  &:hover {
+    stroke: #4A86E8;
+    stroke-width: 3;
+  }
+  &:hover ~ g > .leaf__inner-text {
+    fill: #ffffff;
+  }
+}
+
+.leaf__inner-text {
+  pointer-events: none;
+  font-size: 20px;
+  font-style:normal;
+  stroke:none;
+}
+
+.leaf__inner-text--bold {
+  font-weight: 700;
+}
+
+.leaf__inner-text--bigger {
+  font-size: 40px;
+}
+
+.leaf__inner-text--smaller {
+  font-size: 16px;
+}

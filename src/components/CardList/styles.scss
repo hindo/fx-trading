@@ -1,0 +1,31 @@
+@import '../../constants.scss';
+
+.card__list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  .card {
+    flex-basis: calc(#{$desktop-card-width} - 10px);
+    max-width: calc(#{$desktop-card-width} - 10px);
+    margin: 0 5px 10px;
+
+    @include desktop {
+      font-size: 1rem;
+        flex-basis: calc(#{$laptop-card-width} - 10px);
+        max-width: calc(#{$laptop-card-width} - 10px);
+    }
+
+    @include tablet {
+      font-size: 1.3rem;
+        flex-basis: calc(#{$tablet-card-width} - 10px);
+        max-width: calc(#{$tablet-card-width} - 10px);
+    }
+
+    @include mobile {
+      font-size: 1.6rem;
+        flex-basis: $mobile-card-width;
+        max-width: 100%;
+    }
+  }
+}
