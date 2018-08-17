@@ -3,8 +3,7 @@ import { fxTradingData } from './constant';
 
 export const GET_DATA = 'GET_DATA';
 export const RANDOMIZE_DATA = 'RANDOMIZE_DATA';
-export const BUY_ACTION = 'BUY_ACTION';
-export const SELL_ACTION = 'SELL_ACTION';
+
 
 export const randomizeData = items => ({
   type: RANDOMIZE_DATA,
@@ -13,27 +12,10 @@ export const randomizeData = items => ({
   }
 });
 
-export const buy = (pair, value) => ({
-  type: BUY_ACTION,
-  payload: {
-    pair,
-    value
-  }
-});
-
-export const sell = (pair, value) => ({
-  type: SELL_ACTION,
-  payload: {
-    pair,
-    value
-  }
-});
-
-const randomizeItems = (items, userStore) => {
+export const randomizeItems = (items) => {
   return items.map(item => {
     const newBuyValue = randomizer(item.buy, 0.1);
-    const userBoughtValue = userStore[item.pair] || null;
-    const newDirection = userBoughtValue && (newBuyValue > userBoughtValue ? 'up' : 'down');
+    const newDirection = newBuyValue > item.buy ? 'up' : 'down';
     return {
       pair: item.pair,
       buy: newBuyValue,
@@ -44,13 +26,9 @@ const randomizeItems = (items, userStore) => {
 };
 
 export const getRandomizedData = () => {
-  return (dispatch, getState) => {
-    const { data } = getState();
-    const newItems = randomizeItems(fxTradingData, data.userStore);
+  return (dispatch) => {
+    const newItems = randomizeItems(fxTradingData);
     return dispatch(randomizeData(newItems));
   };
 };
 
-export const buyAction = (pair, value) => {
-  return dispatch => dispatch(buy(pair, value));
-};

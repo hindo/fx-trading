@@ -1,6 +1,6 @@
 export const composeHeader = (pair, prefix) => {
   const pairSplit = pair.split(' ');
-  return `${prefix} ${pairSplit[0]}`;
+  return `${prefix} ${pairSplit[0]}`.trim();
 };
 
 export const composeValue = value => {

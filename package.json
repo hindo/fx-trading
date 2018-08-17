@@ -13,14 +13,17 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "react:start": "react-scripts start",
+    "react:build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "sass:watch": "npx sass --watch src:src",
-    "sass:build": "npx sass --update src/:src/"
+    "sass:build": "npx sass --update src:src",
+    "start": "nf start",
+    "build": "yarn run sass:build && yarn run react:build"
   },
   "devDependencies": {
+    "foreman": "^3.0.1",
     "node-sass": "^4.9.3"
   }
 }

@@ -1,21 +1,17 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { buyAction } from '../../../actions';
 import { composeHeader, composeValue } from '../../../utils';
 
 import '../styles.css';
 
-export const RightLeaf = connect(
-  null,
-  { buyAction }
-)(props => {
-  const { header, pair, value, buyAction } = props;
+export const RightLeaf = props => {
+  const { header, pair, value } = props;
   const composedHeader = composeHeader(pair, header);
   const composedValue = composeValue(value);
   return (
     <div className="leaf leaf__right">
-      <svg viewBox="906.139 325.5 216.361 90.098" onClick={() => buyAction(pair, value)}>
+      <svg viewBox="906.139 325.5 216.361 90.098" >
         <g>
           <path
             className="leaf__shape"
@@ -51,4 +47,4 @@ export const RightLeaf = connect(
       </svg>
     </div>
   );
-});
+};
