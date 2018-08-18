@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
-import { RANDOMIZE_DATA, BUY_ACTION } from './actions';
+import { RANDOMIZE_DATA } from './actions';
 
 import { fxTradingData } from './constant';
 
 export const data = (
   state = {
-    items: fxTradingData,
+    items: fxTradingData
   },
   action
 ) => {

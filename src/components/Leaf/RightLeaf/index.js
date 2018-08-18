@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
 
 import { composeHeader, composeValue } from '../../../utils';
 
@@ -11,7 +10,7 @@ export const RightLeaf = props => {
   const composedValue = composeValue(value);
   return (
     <div className="leaf leaf__right">
-      <svg viewBox="906.139 325.5 216.361 90.098" >
+      <svg viewBox="906.139 325.5 216.361 90.098">
         <g>
           <path
             className="leaf__shape"
